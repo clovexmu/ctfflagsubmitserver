@@ -1,4 +1,4 @@
-package com.clovexmu.ctf.demo.api;
+package com.clovexmu.ctf.demo.controller;
 
 import com.clovexmu.ctf.demo.utils.ResponseUtil;
 import com.clovexmu.ctf.demo.domain.FlagSubmited;
@@ -47,7 +47,6 @@ public class ctfcontroller {
         flagSubmited.setFlags(flags);
         flagSubmited.setQuestionNumber(questionNumber);
         this.flaglist.add(flagSubmited);
-        //return ResponseUtil.okList( flaglist ) ;
         return ResponseUtil.ok("success");
     }
 
