@@ -24,10 +24,16 @@ public class ctfcontroller {
 //    @Autowired
 //    Map<String,FlagSubmited> map;
 
-    @GetMapping("/test")
+//    @GetMapping("/test")
+//    public String test(@RequestParam(required = true) String id, @RequestParam(defaultValue = "test") String flag)
+//    {
+//        return "hello, user:"+ id+ " your flag is :" + flag;
+//    }
+
+    @GetMapping("/hello")
     public String test(@RequestParam(required = true) String id, @RequestParam(defaultValue = "test") String flag)
     {
-        return "hello, user:"+ id+ " your flag is :" + flag;
+        return "hello";
     }
 
     @RequestMapping("/flagsubmit")
