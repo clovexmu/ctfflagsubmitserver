@@ -31,21 +31,22 @@ public class ctfcontroller {
     }
 
     @RequestMapping("/flagsubmit")
-    public Object flagsubmit(@RequestParam() String token, @RequestParam() String flags, @RequestParam int questionNumber)
+
+    public Object flagsubmit(FlagSubmited flag)
     {
          //System.out.println("flagsubmit:"+ token + "flags:"+flags);
-        Assert.notNull(token,"token不能为空!");
-        Assert.notNull(flags,"flags不能为空!");
-        Assert.notNull(questionNumber,"QuestionNumber不能为空!");
+        Assert.notNull(flag.getToken(),"token不能为空!");
+        Assert.notNull(flag.getFlags(),"flags不能为空!");
+        Assert.notNull(flag.getQuestionNumber(),"QuestionNumber不能为空!");
 
 //        beanInvoke.add(flagSubmited);
 //        return ResponseUtil.okList( beanInvoke.GetFlagList() ) ;
        // map.put(flagSubmited.getToken()+flagSubmited.getQuestionNumber(), flagSubmited);
 //        return ResponseUtil.ok();
         FlagSubmited flagSubmited= new FlagSubmited();
-        flagSubmited.setToken(token);
-        flagSubmited.setFlags(flags);
-        flagSubmited.setQuestionNumber(questionNumber);
+        flagSubmited.setToken(flag.getToken());
+        flagSubmited.setFlags(flag.getFlags());
+        flagSubmited.setQuestionNumber(flag.getQuestionNumber());
         this.flaglist.add(flagSubmited);
         return ResponseUtil.ok("success");
     }
